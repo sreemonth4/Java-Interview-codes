@@ -15,9 +15,12 @@ Question
     public class PrimeChecker { 
       // Method to check if a number is prime 
       public static String isPrime(int n) 
-      { if (n <= 0) 
-      { return "Not a Valid Input";
-      } if (n == 1)
+      { 
+        if (n <= 0) 
+      { 
+        return "Not a Valid Input";
+      } 
+        if (n == 1)
       {
         return "Not a Prime Number";
       } 
