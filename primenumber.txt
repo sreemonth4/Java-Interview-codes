@@ -1,0 +1,55 @@
+Question 
+  Write a Program to identiy the given number is Prime or Not Prime
+  Constraints:
+  Input must be an integer greater then Zero
+    If the Input is less than 1 then we should print - Not a Valid Input
+  Example:Input - 3Explanation:NAPublic 
+    Test Cases:#InputExpected
+    Output10 Not a Valid Input
+    21Not a Prime Number
+    32Prime Number
+    49Not a Prime Number"
+
+    **************Code***************
+    import java.util.Scanner;
+    public class PrimeChecker { 
+      // Method to check if a number is prime 
+      public static String isPrime(int n) 
+      { if (n <= 0) 
+      { return "Not a Valid Input";
+      } if (n == 1)
+      {
+        return "Not a Prime Number";
+      } 
+       if (n == 2) 
+       {
+         return "Prime Number";
+       }
+       if (n % 2 == 0)
+       { 
+         return "Not a Prime Number";
+       }
+       for (int i = 3; i <= Math.sqrt(n); i += 2)
+         {
+           if (n % i == 0)
+           {
+             return "Not a Prime Number";
+           }
+         }
+       return "Prime Number";
+      }
+      public static void main(String[] args) 
+      {
+        Scanner scanner = new Scanner(System.in);
+         if (scanner.hasNextInt())
+         {
+           int number = scanner.nextInt(); 
+           String result = isPrime(number);
+           System.out.println(result);
+         }
+         else {
+           System.out.println("Not a Valid Input"); 
+         } 
+        scanner.close(); 
+      }
+    }
